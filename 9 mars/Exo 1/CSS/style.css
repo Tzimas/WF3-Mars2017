@@ -48,6 +48,19 @@ Style Reset
     }
 
 /*
+Style largeur maximum
+*/
+
+    nav ul, #portfolio, #aboutMe p, #contactMe, footer section{
+        /* Définir une largeur maximum*/
+        max-width: 95rem;
+
+        /* Centrer la balise de type block dans son parent*/
+        margin: auto;
+    }
+
+
+/*
 Style header
 */
 
@@ -207,7 +220,7 @@ Style Footer
          vertical-align: top;
      }
 
-/* Deux techniques pour changer la couleur du lien*/
+    /* Deux techniques pour changer la couleur du lien*/
      footer p a{
          color: #18bc9c;
      }
