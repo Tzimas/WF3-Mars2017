@@ -1,6 +1,7 @@
 /* Importer un fichier CSS*/
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
+@import url('https://fonts.googleapis.com/css?family=Lemonada:400,700|Oxygen:400,700');
 
 
 /*
@@ -22,7 +23,12 @@ Style Reset
         /*Mettre à bonne échelle le texte c-a-d env 15px c bien*/
         font-size: 1.5rem;
         /*Changer la police de caractères*/
-        font-family: "Arial", sans-serif;
+        font-family: 'Oxygen', sans-serif;
+    }
+
+    h1, h2, h3{
+        font-family: 'Lemonada', cursive;
+        font-weight: 400;
     }
     a{
         text-decoration: none;
@@ -56,7 +62,11 @@ Style Reset
 Style largeur maximum
 */
 
-    nav ul, #portfolio, #aboutMe p, #contactMe, footer section{
+    nav ul, 
+    main section:first-child,
+    main section:nth-child(2) p,
+    main section:last-child,
+    footer section{
         /* Définir une largeur maximum*/
         max-width: 95rem;
 
@@ -109,7 +119,7 @@ Style header
             position: relative;
         }
 
-        #firtNavLi{
+        nav li:first-child{
             /*Sortir la balise du flux pour la repositionner précisément*/
             position: absolute;
             /* Placer la balise à gauche*/
@@ -155,7 +165,7 @@ Style header
  /* Style portfolio */
 
  
-    #portfolio article{
+   main section:first-child article{
         /* Mettre une marge exterieur de 10px */
         margin: 1rem;
 
@@ -168,7 +178,7 @@ Style header
     }
 
 
-     #portfolio a{
+    main section:first-child a{
          font-size: 8rem;
          background: rgba(24, 188, 156, .7);
          color: white;
@@ -189,25 +199,25 @@ Style header
          }
 
          /*Rendre visible en passant la souris dessus*/
-     #portfolio a:hover{
+    main section:first-child a:hover{
              opacity: 1;
          }
 
        /* Centrer tout les éléments dans la page*/
-    #portfolio{
+   main section:first-child{
         text-align: center;
          }
   
 
 /* Style About Me*/
 
-        #aboutMe{
+       main section:nth-child(2){
             color: white;
             background: #18bc9c;
             text-align: center;
         }
 
-        #aboutMe p{
+       main section:nth-child(2) p{
             /* Afficher le texte en deux colonnes*/
         webkit-column-count: 2; /* Chrome, Safari, Opera */
          moz-column-count: 2; /* Firefox */
@@ -219,7 +229,7 @@ Style header
          margin-bottom: 4rem;
         }
 
-        #aboutMe a{
+       main section:nth-child(2) a{
             color: white;
             border: .3rem solid white;
             padding: 1rem 1.5rem;
