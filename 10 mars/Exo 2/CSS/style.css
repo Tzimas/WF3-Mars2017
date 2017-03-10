@@ -1,0 +1,71 @@
+li{
+    display: inline-block;
+}
+
+
+
+ul, main{
+    padding: 0;
+    max-width: 30rem;
+    margin: auto;
+}
+
+main{
+    padding: 3rem;
+}
+
+nav{
+    text-align: right;
+}
+
+/* Positionner la première li de la nav à gauche*/
+    nav ul{
+        /*Bloquer les enfants dans le li*/
+        position: relative;
+    }
+    #liOnLeft{
+        position: absolute;
+        left: 0;
+    }
+
+
+
+/*Pas besoin car de base toute les balises sont configurer pour etre à gauche*/
+footer{
+    text-align: left;
+}
+/* Positionner le dernier li du footer à droite*/
+    footer ul{
+        /*Bloquer les enfants dans le li*/
+        position: relative;
+    }
+    #liOnRight{
+        position: absolute;
+        right: 0;
+    }
+
+/*Figer une balise*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+
+
+header, footer{
+    background: black;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+
+/*Figer une balise*/
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
