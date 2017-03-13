@@ -1,0 +1,75 @@
+/*
+Style Reset
+*/
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        /* Ne JAMAIS définir les propriétés width et height sur le body*/
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    header, main, footer{
+        max-width: 50rem;
+        padding: 2rem;
+       /*Centrer la balise dans la page html*/
+        margin: 2rem auto;
+    }
+
+/*
+Style header
+*/
+
+    header{
+        background: #eee;
+        
+        
+        position: relative;
+    }
+    li{
+        /*Aligner les balises li de la nav*/
+        display: inline-block;
+    }
+
+    header li:first-child{
+        position: absolute;
+        right: 2rem;
+    }
+
+    header li:last-child{
+        position: absolute;
+        left: 2rem;
+    }
+
+/*
+Style main
+*/
+
+    label, textarea, input :not([type="submit"]){
+        display: block;
+        width: 100%;
+        }
+
+/*
+Style footer
+*/
+
+
+    /*Faire en sorte que le footer soit toujours visible en bas*/
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #eee;
+        max-width: 100%;
+    }
+
+
+  
