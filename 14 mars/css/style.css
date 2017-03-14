@@ -1,3 +1,97 @@
-body{
-    background: deepskyblue;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+/*
+Style reset
+*/
+    /*Supprimer toutes les marges*/
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /*Configurer l'utilisation 1rem=10px*/
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+
+    a{
+        text-decoration: none;
+        color: #349aa6;
+    }
+
+    h1 span{
+        text-transform: lowercase;
+    }
+
+    /*Appliquer deux design différents sur la balise h1 */
+    h1{
+        font-size: 1.5rem;
+        /*On préfère utiliser em ici, afin que l'interlignage suive la taille du texte. Si on modifie la taille de la police, l'interlignage suivra*/
+        line-height: 1.8em;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 4rem;    
+    }
+
+    h1 b{
+        font-size: 2em;
+        display: block;
+    }
+
+
+/*
+Style header
+*/
+
+      header{
+        text-align: center;
+        color: white;
+        /*Configurer l'image de fond en parallaxe*/
+        background-image: url(../img/img-couverture-iphone.jpg);
+        background-position: top;
+        /* Modifier la taille de l'image de fond*/
+         background-size: 150%;
+         /* Bloquer l'image de fond */
+         background-attachment: fixed;
+         
+    }
+
+    nav{
+        background: #002a35;
+        padding: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    li{
+        display: inline-block;
+        width: 45%;
+    }
+
+    [src="img/logo-GRT-gaz-blanc.png"]{
+        width: 15rem;
+        margin-bottom: 4rem;
+    }
+
+    /* Sélectionner une balise suivante*/
+    h1+a{
+        /* Les balises inline ne peuvent pas recevoir les propriétés width et height*/
+        background: #349aa6;
+        display: inline-block;
+        /*Créer un carré pur ensuite faire le rond*/
+        width: 5rem;
+        height: 5rem;
+        margin-bottom: 8rem;
+        /*Faire un rond avec le carré*/
+        border-radius: 50%;
+    }
+     
+     a img{
+         padding-top: 0.8rem;    
+     }
+  
