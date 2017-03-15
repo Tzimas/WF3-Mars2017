@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+/*
+ANIMATION
+*/
+    @-webkit-keyframes pictoHeaderAnim {
+        0% { transform: translateY(0);}
+        50% { transform: translateY(1rem);}
+        100% { transform: translateY(0);}
+    }
+     @keyframes pictoHeaderAnim {
+        0% { transform: translateY(0);}
+        50% { transform: translateY(1rem);}
+        100% { transform: translateY(0);}
+    }
+
+
+
+/*
+Style reset
+*/
+    /*Supprimer toutes les marges*/
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /*Configurer l'utilisation 1rem=10px*/
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        text-align: center;
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+
+    a{
+        text-decoration: none;
+        color: #349aa6;
+    }
+
+    span{
+        text-transform: lowercase;
+    }
+
+    /*Appliquer deux design différents sur la balise h1 */
+    h1{
+        font-size: 1.5rem;
+        /*On préfère utiliser em ici, afin que l'interlignage suive la taille du texte. Si on modifie la taille de la police, l'interlignage suivra*/
+        line-height: 1.8em;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 4rem;    
+    }
+
+    h1 b{
+        font-size: 2em;
+        display: block;
+    }
+
+    h2, h3{
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 2.2rem;
+    }
+
+    section{
+        padding: 4rem 2rem;
+    }
+    p{
+        padding: 4rem 0;
+    }
+
+/*
+Style header
+*/
+
+      header{
+        color: white;
+        /*Configurer l'image de fond en parallaxe*/
+        background-image: url(../img/img-couverture-iphone.jpg);
+        background-position: top;
+        /* Modifier la taille de l'image de fond*/
+         background-size: 150%;
+         /* Bloquer l'image de fond */
+         background-attachment: fixed;
+         
+    }
+
+    nav{
+        background: #002a35;
+        padding: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    li{
+        display: inline-block;
+        width: 45%;
+    }
+
+    [src="img/logo-GRT-gaz-blanc.png"]{
+        width: 15rem;
+        margin-bottom: 4rem;
+    }
+
+    /* Sélectionner une balise suivante*/
+    h1+a{
+        /* Les balises inline ne peuvent pas recevoir les propriétés width et height*/
+        background: #349aa6;
+        display: inline-block;
+        /*Créer un carré pur ensuite faire le rond*/
+        width: 5rem;
+        height: 5rem;
+        margin-bottom: 8rem;
+        /*Faire un rond avec le carré*/
+        border-radius: 50%;
+
+        /*Appliquer l'animation*/
+        -webkit-animation-name: pictoHeaderAnim;
+        animation-name: pictoHeaderAnim;
+
+        /* Définir la durée*/
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+
+        /* Définir le nombre de boucle*/
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+    }
+     
+     a img{
+         padding-top: 0.8rem;    
+     }
+  
+     figure{
+         padding:2rem 0;
+     }
+
+     img{
+         max-width: 100%;
+     }
+/*
+Style main
+*/
+    /* CallToAction */
+     .callToAction{
+        color: white;
+        border: .1rem solid white;
+        text-align: left;
+        border-radius: .5rem;
+        display: block;
+        padding: 1rem;
+        margin-top: 2rem;
+        max-width: 25rem;
+    }
+
+     .callToAction.blue{
+         color: #349aa6;
+         border-color: #349aa6;
+     }
+
+     .callToAction::before{
+         /* Afficher une image dans le content*/
+         content:url(../img/puce-bas-blanche.png);
+
+         display: block;
+         height: 3rem;
+         width: 3rem;
+
+         /* Habiller la balise*/
+        float: left;
+        margin-right: 1.5rem;
+     }
+
+    .callToAction::after{
+        /* Annuler le flottememnt */
+        clear: both;
+    }
+
+   .callToAction.blue::before{
+       content:url(../img/puce-droite-bleu.png);
+   }
+
+    /* Section programme & Réponse */
+    section:nth-child(2), section:nth-child(4){
+        color: white;
+        /* Effet parallaxe*/
+        background-image: url(../img/img-foule.jpg);
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    /* Section Solution & Chiffres & Footer*/
+    section:nth-child(3), section:nth-child(7), footer{
+        color: white;
+        background: #349aa6;
+    }
+
+    section:nth-child(7) figure{
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+    }
+
+    /* Section Inscrivez-vous*/
+    [alt="Logo salon des maires"]{
+        width: 10rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Vidéo */
+    section:nth-child(6){
+        background: #002a35;
+        position: relative;
+        /* Masquer les balises enfants qui dépassent du parent*/
+         overflow: hidden;
+    }
+
+   /* Balise html5 pour afficher une vidéo */
+   video{
+       position: absolute;
+        top: 0;
+        left: 0; 
+        height: 100%;
+   }
+
+    section:nth-child(6) article{
+        color: white;
+        background: rgba(0, 0, 0, .7);
+        padding: 4rem 2rem;
+        /* Faire passer la balise article sur le 1er plan*/
+        position: relative;
+        z-index: 1;
+    }
+    
+    section:nth-child(6) h3{
+        font-weight: 900;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    section:nth-child(6) a{
+        color: white;
+    }
+
+    
+    /* Présentation*/
+    article + img{
+        width: 15rem;
+        margin-bottom: 4rem;
+    }
+    
+    iframe{
+        border: none;
+        min-height: 30rem;
+        width: 100%;
+    }
+
+/*
+footer
+*/
+
+    footer{
+        font-size: 1rem;
+        padding: 2rem;
+    }
+
+
+
+/*
+Requête media
+*/
+
+    /* Ecran d'une taille minimale de 550px*/
+    @media screen and (min-width:550px){
+
+        /* Style Reset */
+            h1{
+                font-size: 2rem;
+                padding: 0 2rem;
+            }
+
+            h2, h3{
+                font-size: 2.7rem;
+            }
+            section{
+                padding: 8rem 4rem;
+            }
+
+        /* Style HEADER */
+            header{
+                padding-bottom: 13rem;
+                background-image: url(../img/img-couverture-desktop.jpg);
+            }
+    }
