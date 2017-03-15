@@ -23,6 +23,10 @@ Style reset
     *{
         margin: 0;
         padding: 0;
+
+        /* Inclure dans les largeurs les padding et les border */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     /*Configurer l'utilisation 1rem=10px*/
@@ -53,7 +57,8 @@ Style reset
         line-height: 1.8em;
         font-weight: 400;
         text-transform: uppercase;
-        margin-bottom: 4rem;    
+        max-width: 50rem;
+        margin: 0 auto 4rem auto;     
     }
 
     h1 b{
@@ -151,7 +156,7 @@ Style main
         border: .1rem solid white;
         text-align: left;
         border-radius: .5rem;
-        display: block;
+        display: inline-block;
         padding: 1rem;
         margin-top: 2rem;
         max-width: 25rem;
@@ -274,7 +279,7 @@ footer
 Requête media
 */
 
-    /* Ecran d'une taille minimale de 550px*/
+    /* Ecran d'une taille minimale de 550px (tablette) */
     @media screen and (min-width:550px){
 
         /* Style Reset */
@@ -295,4 +300,46 @@ Requête media
                 padding-bottom: 13rem;
                 background-image: url(../img/img-couverture-desktop.jpg);
             }
+    }
+
+
+    /* Ecran d'une taille minimale de 750 px (ordi)*/
+    @media screen and (min-width:750px){
+
+        /* Solutions */
+        section:nth-child(3) figure{
+            display: inline-block;
+            vertical-align: top;
+            width: 32%;
+            margin-top: 2rem;
+        }
+        /* Chiffres */
+        section:nth-child(7) figure{
+            width: 32%;
+            margin-top: 2rem;
+        }
+
+        /* Présentation */
+            section:last-child article{
+                text-align: left;
+                display: inline-block;
+                vertical-align: top;
+                width: 49%;
+                padding: 0 1rem 0 0;
+            }
+
+            section:last-child article:last-of-type{
+                padding: 0 0 0 1rem;
+            }
+    }
+
+
+    /* Ecran d'une taille minimal de 950px (grand ordi) */
+    @media screen and (min-width:950px){
+        /* Reset */
+        .siteMaxWidth{
+            max-width: 95rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
