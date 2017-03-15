@@ -15,7 +15,6 @@ ANIMATION
     }
 
 
-
 /*
 Style reset
 */
@@ -275,6 +274,7 @@ footer
 
 
 
+
 /*
 Requête media
 */
@@ -331,6 +331,12 @@ Requête media
             section:last-child article:last-of-type{
                 padding: 0 0 0 1rem;
             }
+
+            /* Vidéo */
+                video{
+                    width: 100%;
+                    height: auto;
+                }
     }
 
 
