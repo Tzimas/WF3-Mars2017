@@ -283,3 +283,67 @@ Style footer
         padding-left: 2rem;
         font-size: 2rem;
     }
+
+
+/*
+Responsive Design
+*/
+
+    /* Ecran d'un taille minimal de 400px*/
+    @media screen and (min-width:400px){
+        .portfolioPage article{
+            display: inline-block;
+            width: 49%; /* c'est ceci qui me permet de créer deux colonnes*/
+            padding: 0 1rem 0 0;
+        }
+
+        /*Sélectionner toutes les 2 balise à partir de la 2ème */
+        .portfolioPage article:nth-child(2n+2){
+            padding: 0 0 0 1rem;
+        }
+    }
+
+
+
+
+    /* Ecran d'une taille minimal de 750pc */
+
+    @media screen and (min-width:750px){
+        /*Style reset*/
+            main, h1, nav{
+                max-width: 85rem;
+                margin: auto;
+            }
+
+            h1 span{
+                display: initial;
+            }
+
+            h1{
+                font-size: 4rem;
+            }
+
+        /*Style header*/
+            header{
+                text-align: left;
+                text-indent: 1rem;
+            }
+
+            /*Masquer le burger*/
+            header>a{
+                display: none;
+            }
+
+            /* Faire réapparaitre la nav*/
+            nav{
+                display: block;
+                text-indent: 0;
+            }
+
+            /* Aligner les item de la nav */
+            nav li{
+                display: inline-block;
+            }
+     }
+
+    
