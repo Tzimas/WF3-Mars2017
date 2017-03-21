@@ -1,0 +1,158 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700');
+
+/*
+Style Reset
+*/
+
+    *{
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        
+        font-weight: 400;
+        text-align: center;
+    }
+
+    h1{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    h1 span{
+        font-family:'Raleway', sans-serif;
+        display: block;
+        font-size: .5em;
+    }
+
+    a, header li{
+        text-decoration: none;
+
+        /* Toute les balises a ont une transition du coup je l'applique dans le header */
+
+        transition: all .5s;
+    }
+
+    ul{
+        /* Supprimer les puces */
+        list-style: none;
+    }
+
+/*
+Style header
+*/
+
+    header{
+        background: #135063;
+        color: #BEBCBE;
+        padding: 2rem;
+        /* Bloquer les enfants dans le parent*/
+        position: relative;
+    }
+
+    nav{
+        /*display: none;*/
+    }
+
+    header > a{
+        /* La balise A qui est enfant direct du header*/
+    background: white;
+    color: #135063;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: inline-block;
+    /* Arrondire les bords du burger Menu*/
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+    /* Placer le burger menu au centre du rond blanc*/
+    padding-top: .7rem;
+
+    /* Positionner précisement la balise */
+    position: absolute;
+
+    left: 50%;
+    top: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* Créer une bordure*/
+    border: .1rem solid #135063;
+
+    /* Augmenter la taille du burger*/
+    font-size: 1.8rem;
+    }
+
+    /* Afficher la nav au survol de la balise A du header*/
+    header > a:hover + nav{
+        display: block;
+    }
+
+
+    header li{
+        background: rgba(255, 255, 255, .5);
+        padding: .5rem;
+        margin-bottom: 1rem;
+    }
+
+    nav a{
+        color: white;
+    }
+
+    /* Changement de couleur des balises au survol de la souris */
+     header li:hover{
+         background: white;
+     }
+
+     
+     nav li:hover a{ 
+         /* si on ne selectionne que nav a:hover, le texte ne changera de couleur uniquement si on passe précisement le souris sur les balises a,car si on passe sur les balises li de fond coloré, les balises a étant en blanc, elles ne sont pas visible */
+        color: #135063;
+        font-weight: 700;
+    }
+
+    header > a:hover{
+        color: #BEBCBE;
+        background: #135063;
+        border-color: #BEBCBE;
+    }
+    
+
+    
+
+
+/*
+Style footer
+*/
+
+    footer{
+        background: #135063;
+        color: #BEBCBE; /* Uniquement pour changer la couleur li */
+        padding: 2rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    footer a{
+        color: #BEBCBE;
+    }
+
+    footer li:not(:last-child){
+        display: inline-block;
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+        font-size: 2rem;
+    }
