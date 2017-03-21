@@ -150,8 +150,7 @@ Style main
 */
 
     main{
-        padding: 2rem 4rem;
-        margin-bottom: 5rem;
+        padding: 4rem 2rem 10rem 2rem;
     }    
 
 
@@ -219,6 +218,44 @@ Style main
         .portfolioPage article:hover a{
             top: 40%;
         }
+
+    /*Style contact*/
+
+        /*Style formulaire*/
+        form{
+            margin: 2rem auto;
+        }
+
+
+        textarea, input:not([type="submit"]){
+            display: block;
+            width: 100%;
+
+            border: none; 
+            border-bottom: .1rem dotted #135063;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        } 
+
+        textarea{
+            min-height: 15rem;
+        }
+
+        form :last-child{
+            background: #135063;
+            color: #BEBCBE;
+            border: none;
+            padding: .5rem 1rem;
+        }
+
+        /* Style iframe */
+
+        iframe{
+            width: 100%;
+            min-height: 30rem;
+            border: none;
+        }
+
 
 /*
 Style footer
