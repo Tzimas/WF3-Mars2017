@@ -161,7 +161,7 @@ Style main
 
     /* Style Portfolio */
         figure{
-            position: relative;;
+            position: relative;
         }
 
         figure::after{
@@ -347,3 +347,17 @@ Responsive Design
      }
 
     
+
+
+
+
+
+
+
+
+    
+        figure img{
+        height: 20rem;
+        display: inline-block;
+        margin-left: 2rem;
+        }

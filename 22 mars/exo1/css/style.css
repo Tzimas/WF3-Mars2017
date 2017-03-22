@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Roboto:400,700');
+
+/*
+Style Reset
+*/
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    li{
+        list-style: none;
+        display: inline-block;
+        padding-left: 1.5rem;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+    header, main, footer{
+        margin: auto;
+    }
+    img{
+        max-width: 100%;
+    }
+
+       h1{
+       font-family: 'Quicksand', sans-serif;
+       font-weight: 700;
+       
+   }
+
+         h2{
+         background-color: #0b0b2d;
+        color: white;
+        padding: .5rem;
+        display: inline;
+        margin: 2rem;
+        }
+
+        main article{
+            margin-bottom: 8rem;
+        }
+
+/*
+Style header
+*/
+
+    header{
+        margin-bottom: 6rem;
+        padding: 2rem;
+    }
+
+    header nav{
+        background-image:url(../img/back.jpg);
+        background-size: cover;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+   header li:first-child{
+       color: white;
+       font-weight: 700;
+       font-size: 2rem;
+   }
+
+   header img{
+        border-radius: 50%;
+        height: 10rem;
+        float: left;
+        margin: 2rem;
+   }
+
+   header p{
+       padding: 2rem;
+   }
+
+   /*Style Main
+   */
+
+        main{
+            clear: both;
+        }
+
+        /* A propos*/
+
+           
+
+            main article:first-child p{
+                margin: 2rem;
+                column-count: 2;
+            }
+
+        /* Portfolio */
+
+            
+                
+            figure img{
+            max-width: 100%;
+            margin-left: 2rem;
+            }
+
+
+            main article:nth-child(2) p{
+                margin: 2rem;
+            }
+
+            figure{
+                position: relative;
+            }
+
+            figcaption{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+
+                background: rgba(255, 255, 255, .7);
+                padding: 1rem;
+                text-align: center;
+
+                z-index: 1;     
+            }
+
+
+
+        /* Contacts*/
+
+          main article:nth-child(3) p{
+                margin: 2rem;
+            }
+
+            form{
+                margin:2rem;
+            }
+            
+            input:not([type="submit"]), textarea{
+                display: block;
+                width: 50%;
+
+                border: none;
+                color: black;
+                background: lightgray;
+                
+
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            textarea{
+                min-height: 15rem;
+            }
+
+            form :last-child{
+                background: #0b0b2d;
+                color: white;
+                border: none;
+                padding: .5rem 1rem;
+                
+            }
+
+            iframe{
+                width: 100%;
+                min-height: 20rem;
+                border: none;
+            }
+
+/*
+ Style footer
+*/
+
+    footer{
+        background: #0b0b2d;
+        padding: 1rem 2rem;
+    }
+
+    footer li:last-child{
+        color: white;
+       font-weight: 700;
+       font-size: 2rem;
+    }
+
+
+
+/*
+Responsive
+*/
+
+    @media screen and (min-width:950px){
+        header, main, footer{
+            max-width: 95rem;
+            margin: auto;
+        }
+
+         nav{
+             position: relative;
+             text-align: right;
+         }
+
+         header ul>li:first-child{
+             position: absolute;
+             left: 3rem;
+         }
+
+        figure{
+        display: inline-block;
+        width: 24%;
+        padding-left: .5rem;
+        }
+
+
+        form{
+            display: inline-block;
+            width: 40%;
+            top: 0;
+        } 
+
+        iframe{
+            display: inline-block;
+            width: 40%;
+            top: 0;
+        }
+         
+         footer ul{
+             position: relative;
+             text-align: left;
+         }
+
+         footer li:last-child{
+             position: absolute;
+             right: 3rem;
+         }
+    }
+
+        
+
+
+  
+    

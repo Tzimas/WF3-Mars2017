@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Roboto:400,700');
+
+
+/*
+Style Reset
+*/
+
+    *{
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+
+    h1, h2, li:first-child{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+    }
+
+    h1{
+        font-size: 2.5rem;
+        line-height: 1em;
+        margin-bottom: 2rem;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    li{
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+
+/*
+Style Header
+*/
+
+    header{
+        color:white;
+        padding: 2rem;
+        background-image: url(../img/back.jpg);
+        background-size: cover;
+
+    }
+
+    li:first-child{
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+/*
+Style main
+*/
+
+    main{
+        padding: 2rem;
+    }
+
+    /*Sélectionner la balise img qui suit directement la balise h1*/
+
+    h1 + img{
+        width: 10rem;
+        float: left;
+        margin-right: 1.5rem;
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
