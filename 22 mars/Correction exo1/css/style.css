@@ -32,6 +32,18 @@ Style Reset
         font-size: 2.5rem;
         line-height: 1em;
         margin-bottom: 2rem;
+        color: #04113d;
+    }
+
+    h2{
+        color: white;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 span{
+        background:#04113d;
+        padding: 1rem 1.5rem;
+        display: block;
     }
 
     a{
@@ -48,6 +60,11 @@ Style Reset
         margin-right: 1rem;
     }
 
+    p{
+        margin-bottom: 1rem;
+    }
+
+    
 
 /*
 Style Header
@@ -75,6 +92,11 @@ Style main
         padding: 2rem;
     }
 
+    section{
+        margin-bottom: 6rem;
+        clear: both;
+    }
+
     /*Sélectionner la balise img qui suit directement la balise h1*/
 
     h1 + img{
@@ -84,4 +106,124 @@ Style main
 
         -webkit-border-radius: 50%;
         border-radius: 50%;
+    }
+
+    /*h1 + p::after{
+        clear: both;
+    }*/
+
+    figure{
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    figcaption{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        text-transform: uppercase;
+        background: rgba(255,255,255,.7);
+        font-weight: 700;
+    }
+
+    textarea, input:not([type="submit"]){
+        display: block;
+        width: 100%;
+        border: none; 
+        background: #eee;
+        padding: 1rem 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    [type="submit"]{
+        border: none; 
+        background: #04113d; 
+        color: white; 
+        padding: 1rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    textarea{
+        min-height: 20rem;
+    }
+
+    iframe{
+        border: none; 
+        width: 100%;
+        min-height: 30rem;
+    }
+
+/*
+Style Footer
+*/
+
+    footer{
+        color: white;
+        background: #04113d;
+        padding: 2rem;
+    }
+
+
+
+/*
+Responsive Design
+*/
+
+    @media screen and (min-width:850px){
+
+        h1{
+            font-size: 4rem;
+        }
+
+        main, ul{
+            max-width: 85rem;
+            margin: auto;
+        }
+
+        main{
+            padding: 4rem 0;
+        }
+        
+        /* Header */
+        li:first-child{
+            display: inline-block
+        }
+
+        nav ul{
+            text-align: right;
+            position: relative;
+        }
+
+        nav li:first-child{
+            position: absolute;
+            left: 0rem;
+            top: -.8rem;
+        }
+
+        /* About & COntacts */
+        section:nth-child(2) p, form, iframe{
+            display: inline-block;
+            vertical-align: top;
+            width: 49%;
+            margin-right: .5rem;
+        }
+
+        /* Portfolio*/
+        figure{
+            display: inline-block;
+            width: 24%;
+            margin-right: .5rem;
+        }
+
+        /*Footer*/
+
+        footer ul{
+            position: relative;           
+        }
+
+        footer li:first-child{
+            right: 0;
+        }
     }
