@@ -51,7 +51,7 @@ Style Reset
 Style Header
 */
 
-    header{
+    nav{
         background: cadetblue;
         border: .1rem dashed #197174;
         padding: 2rem;
@@ -61,12 +61,16 @@ Style Header
     }
 
     nav{
-        max-width: 85rem;
+    
         margin: auto;
         position: relative;
         border: 1rem double #1a7d80;
     }
 
+    ul{
+        max-width: 85rem;
+        text-align: center;
+    }
     li{
         display: inline-block;
         padding: 2rem;
@@ -154,5 +158,21 @@ Méthode Destop Down
 */
 
 @media screen and (max-width:450px){
-    
+
+    figure, form, article{
+        width: 100%;
+    }
+
+    figure{
+        display: block;
+        width: 100%;
+    }
+
+    li:first-child; li:last-child{
+        position: initial;
+    }
+
+    li{
+        padding: 0;
+    }
 }
