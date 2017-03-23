@@ -185,6 +185,10 @@ Responsive Design
         main{
             padding: 4rem 0;
         }
+
+        h2 span{
+            display: inline-block;
+        }
         
         /* Header */
         li:first-child{
@@ -196,8 +200,11 @@ Responsive Design
             position: relative;
         }
 
-        nav li:first-child{
+        nav li:first-child, footer li:first-child{
             position: absolute;
+        }
+
+        nav li:first-child{
             left: 0rem;
             top: -.8rem;
         }
