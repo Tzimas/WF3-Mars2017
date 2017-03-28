@@ -1,178 +1,27 @@
-
-/*
-Style Reset
-*/
-    *{
-        margin: 0;
-        padding: 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    html{
-        font-size: 62.5%;
-    }
-
-    body{
-        font-size: 1.5rem;
-    }
-
-    a{
-        text-decoration: none;
-    }
-
-    img{
-        max-width: 100%;
-    }
-
-    h2{
-        background: #1a7d80;
-        color: #bed2d3;
-        -webkit-border-radius: 2rem;
-        border-radius: 3rem;
-        display: inline-block;
-        padding: 1rem 1.5rem;
-
-    }
-
+ul{
     
-    a{
-        color: #bed2d3;
-    }
+    position: relative;
+    max-width: 85rem;
+    margin: auto;
+    text-align: center;
+}
 
-    p{
-        margin-bottom: 2rem;
-    }
+nav{
+    background: mistyrose;
+}
 
+main{
+    max-width: 85rem;
+    margin: auto;
+}
 
+li{
+    display: inline-block;
     
 
-/*
-Style Header
-*/
+}
 
-    nav{
-        background: cadetblue;
-        border: .1rem dashed #197174;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        
-        text-align: center;
-    }
-
-    nav{
-    
-        margin: auto;
-        position: relative;
-        border: 1rem double #1a7d80;
-    }
-
-    ul{
-        max-width: 85rem;
-        text-align: center;
-    }
-    li{
-        display: inline-block;
-        padding: 2rem;
-    }
-
-    li:first-child{
-        position: absolute;
-        left:2rem;
-    }
-
-    li:last-child{
-        position: absolute;
-        right: 2rem;
-    }
-
-/*
-Style Main
-*/
-
-    main{
-        max-width: 85rem;
-        margin: 0 auto 4rem auto;
-        border: .1rem solid #197174;
-        box-shadow: 1rem 1rem .5rem #d3d1d1;
-        padding: 0 2rem 4rem 2rem;
-    }
-
-    section:not(:last-child){
-        margin-bottom: 4rem;
-    }
-
-/*
-Style Portfolio
-*/
-
-
-    figure{
-        display: inline-block;
-        width: 49%;
-
-        position: relative;
-    }
-
-    figcaption{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, .5);
-        color: white;
-        text-align: center;
-        padding: 1rem 1.5rem;
-    }
-
-
-/*
-Style Formulaire
-*/
-
-    form{
-        width: 49%;
-        text-align: center; /* Pour déplacer la balise submit*/
-    }
-
-
-    textarea, input:not([type="submit"]){
-        display: inline-block;
-        width: 100%;  
-        background: #bed2d3;
-        border: none;
-        border-bottom: .1rem dashed #197174;
-        padding: 1rem 1.5rem; 
-        margin-bottom: .5rem;     
-    }
-    
-    [type="submit"]{
-        background: cadetblue;
-        color: #1a7d80;
-        border: none;
-        padding: 1rem 1.5rem;       
-    }
-
-/*
-Méthode Destop Down
-*/
-
-@media screen and (max-width:450px){
-
-    figure, form, article{
-        width: 100%;
-    }
-
-    figure{
-        display: block;
-        width: 100%;
-    }
-
-    li:first-child; li:last-child{
-        position: initial;
-    }
-
-    li{
-        padding: 0;
-    }
+li:first-child{
+    position: absolute;
+    left: 2rem;
 }

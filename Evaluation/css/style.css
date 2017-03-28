@@ -1,0 +1,274 @@
+/* Vérification du lien avec ma page Index.html :
+body{
+    background: cadetblue;
+}
+*/
+
+/* Importer fontawesome et google font*/
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+
+
+/*
+Style Reset
+*/
+
+    *{
+        /*Supprimer toutes les marges*/
+        margin: 0;
+        padding: 0;
+        /*Contenir les marges*/
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        /*Définir l'echelle de ma page: 10px=1rem*/
+        font-size: 62.5%;
+    }
+
+    body{
+        /* Augmenter la taille de mes polices */
+        font-size: 1.5rem;
+        font-family: Arial, sans-serif;
+        background-image: url(../img/background.png);
+    }
+
+    img{
+        /*Définir une taille max de mes images pour qu'elles ne soient jamais plus grandes que leur d'origine*/
+        max-width: 100%;
+    }
+
+    a{
+        /*Supprimer les lignes des balises a*/
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    h1, h2, h3{
+        font-family:'Courgette', cursive;
+        font-weight: 400;
+    }
+    
+    h1{
+        color: #C55394;
+        background-image: url(../img/rainbow.png);
+        padding: 2rem;
+        background-size: 30rem;
+        background-repeat: no-repeat; 
+        font-size: 2rem;  
+    }
+
+    h2, h3{
+        color: #EB43A3;
+    }
+
+    h3{
+        margin-bottom: 1rem;
+    }
+
+    h2, article{
+        margin-bottom: 2rem;
+    }
+   
+    main{
+        background: white;
+        border: .1rem solid #eee;
+
+        -webkit-border-radius: 1rem;
+        border-radius: 1rem;
+
+        -webkit-box-shadow: 1rem 1rem .5rem #d3d1d1;
+        box-shadow: 0 1rem 1rem .5rem #d3d1d1;
+
+        margin: 0 auto 5rem auto;    
+    }
+
+    section{
+        margin-bottom: 4rem;
+    }
+
+    .fa{
+        padding-right: 1rem;
+    }
+
+    span{
+        display: block;
+    }
+
+   
+
+/*
+Style Header
+*/
+
+    nav{
+        background:#C55394;
+        padding: 1rem 1.5rem; 
+    }
+
+    li{
+        display: none;
+    }
+
+    li:first-child{
+        display: block;
+        font-family: 'Courgette', cursive;
+        font-weight: 400;
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+
+/*
+Style Main
+*/
+
+    main{
+        padding: 2rem;
+        
+    }
+
+        /* Style Le Principale*/
+            h2 + p{
+                margin-bottom: 1rem;
+            }
+
+        /* Style Portfolio */
+
+            figure{
+                /*Bloque les enfants dans leur parent*/
+                position: relative;
+                margin-bottom: 1rem;
+            }
+
+            figcaption{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+
+                background: rgba(0, 0, 0, .8);
+                color: white;
+                text-align: center;
+
+                padding: 1rem;
+            }
+
+        
+        /* Style Nous Trouver*/
+
+            iframe{
+                min-height: 30rem;
+                margin-bottom: 2rem;
+            }
+
+            article > p{
+                margin-bottom: 1rem;
+            }
+
+            [type="email"]{
+                padding: 1rem;
+                margin-bottom: .5rem;
+            }
+
+            [type="submit"]{
+                display: block;
+                background: #C55394;
+                color: white;
+                border:.2rem solid #EB43A3;
+
+                -webkit-border-radius: .5rem;
+                border-radius: .5rem;
+
+                padding: .5rem 1rem;
+            }
+
+
+/*
+Style Footer
+*/
+
+    footer{
+        text-align: right;
+        background:#E577B5;
+        color: white;
+        padding: 1rem;
+    }
+
+
+/*
+Responsive Design
+*/
+    @media screen and (min-width:850px){
+
+        /*Nav*/
+        nav{
+            position: relative;            
+            text-align: right;
+            padding: 2rem;
+        }
+
+        li{
+            display: inline-block;
+            padding-left: 2rem;
+        }
+
+        li:first-child{
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+        }
+
+        a:hover{ 
+            background: #EB43A3;
+            padding: 2rem 0;
+        }
+
+        main{
+
+            max-width: 85rem;
+            margin: 0 auto 5rem auto;
+        }
+
+
+        /*Hearder*/
+        h1{
+            text-align: center;
+            max-width: 85rem;
+            margin: auto;
+        }
+
+
+        /* Portfolio*/
+        figure{
+            display: inline-block;
+            width: 22%;
+            margin: 0 1rem 0 0;
+        }
+
+
+        /* Nous trouver */
+        iframe{
+            display: inline-block;
+            width: 59%;
+        }
+
+        article{
+            display: inline-block;
+            width: 39%;
+            vertical-align: top;
+            padding-left: 2rem;
+            font-size: 1.2rem;
+        }
+
+        h1{
+            background-position-x: 30rem;
+        }          
+    }
+   
