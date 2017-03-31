@@ -1,0 +1,34 @@
+/*
+Style Reset
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem;
+}
+
+header, main, footer{
+    max-width: 80rem;
+    margin: 2rem auto 2rem auto;
+}
+
+h1, h2, h3{
+    margin-bottom: 2rem;
+    color: cadetblue;
+}
+
+input, textarea, label{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}

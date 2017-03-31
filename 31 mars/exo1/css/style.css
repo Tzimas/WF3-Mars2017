@@ -24,6 +24,11 @@ body{
      
 }
 
+main,h1, nav{
+    max-width: 85rem;
+    margin: auto;
+    position: relative;
+}
 
 h1, h2{
     font-family:'Neuton', serif;
@@ -39,8 +44,8 @@ h2::after{
     display: block;
     width: 5rem;
     height: .2rem;
-    margin: 1rem auto 2rem auto;
-    border-bottom:.2rem dotted #0f5f62;
+    margin: 2rem auto 2rem auto;
+    border-bottom:.2rem solid #0f5f62;
 }
 
 h3{
@@ -52,11 +57,18 @@ h3{
 
 a{
     text-decoration: none;
+    color: #0f5f62;
 }
 
 /*
 Style Header
 */
+
+
+.toggleBurger{
+    display: block;
+
+}
 
 header, footer{
     color:white;
@@ -78,7 +90,15 @@ h1 span{
 }
 
 nav ul{
-    display: none;
+    height: 0;
+    overflow: hidden;
+
+    -webkit-transition: all 1.5s;
+    transition: all 1.5s;
+}
+
+.toggleBurger{
+    height: 8.3rem;
 }
 
 .fa-bars{
@@ -92,15 +112,35 @@ nav ul{
     bottom:0;
     cursor: pointer;
     font-size: 1.6rem;
-    padding-top: .4rem;
+    padding-top: .5rem;
 
     
     -webkit-border-radius: 50%;
     border-radius: 50%;
 
     -webkit-transform: translate(-50%, 50%);
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, 119%);
 
+}
+
+nav li{
+    background: rgba(255, 255, 255, .5);
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    list-style: none;
+
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    
+}
+
+.active{
+    background:#0f5f62;
+    font-weight: 700;
+}
+
+.active a {
+    color: white;
 }
 
 /*
@@ -113,4 +153,38 @@ footer{
     left: 0;
     width: 100%;
     margin-bottom: 0;
+
+    border-top:.15rem solid #0f5f62; 
 }
+
+/*
+Requête @media
+*/
+
+@media screen and (min-width: 850px){
+
+    /*Style header*/
+    header{
+        text-align: left;
+    }
+
+    .fa-bars{
+        display: none;
+    }
+
+    nav ul{
+        height: auto;
+        position: absolute;
+        right: 0;
+        bottom: 2rem;   
+    }
+
+    nav li{
+        
+        display: inline-block;
+    }
+
+    nav li:not(:last-child){
+        margin-right: 1rem;
+    }
+} 

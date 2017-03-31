@@ -34,6 +34,12 @@ $(document).ready(function(){
 
     // Générer une balise nav + ul dans le header :
     myHeader.append('<nav><i class="fa fa-bars" aria-hidden="true"></i><ul></nav></ul>');
+
+    // Activer le burgerMenu au click sur la balise .fa-bars :
+    $('.fa-bars').click(function(){
+
+        $('nav ul').toggleClass('toggleBurger');
+    });
     
     // Faire une boucle myNav pour générer les liens de la nav:
     for(var i=0; i<myNav.length; i++){
@@ -47,8 +53,14 @@ $(document).ready(function(){
     myMain.append('<h2>'+myTitles.Accueil+'</h2>');
     myMain.append('<section>'+myContent.Accueil+'</section>');
 
+    // Ajouter la clas active sur la première li de la nav:
+    $('nav li:first').addClass('active');
+
     // Capter l'évènement click sur les balises <a> en bloquant le comportement naturelle des balises <a>:
     $('a').click(function(evt){
+
+        // Supprimer les class active des balises li de la nav :
+        $('nav li').removeClass('active');
         
         // Bloquer le comportement naturel de la balise:
         evt.preventDefault();
@@ -66,17 +78,32 @@ $(document).ready(function(){
 
             $('section').html(myContent.Accueil);
 
+            // Ajouter la class active sur la balise li de la balise à sélectionné:
+             $(this).parent().addClass('active');
+
+
         }else if($(this).attr('href')=='Portfolio'){ 
             $('h2').text(myTitles.Portfolio);
 
             $('section').html(myContent.Portfolio);
 
+            // Ajouter la class active sur la balise li de la balise à sélectionné:
+             $(this).parent().addClass('active');
+
+
         }else{
             $('h2').text(myTitles.Contacts);
 
             $('section').html(myContent.Contacts);
-        };       
+
+            // Ajouter la class active sur la balise li de la balise à sélectionné:
+             $(this).parent().addClass('active');
+        };  
+
+        //Fermer le burgerMenu:
+        $('nav ul').removeClass('toggleBurger');  
     });
+
 
 
 }); //Fin de l'attente du chargement du DOM
