@@ -1,0 +1,363 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700');
+
+/*
+Style Reset
+*/
+
+    *{
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    h1{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    h1 span{
+        font-family:'Raleway', sans-serif;
+        display: block;
+        font-size: .5em;
+    }
+
+    
+    h2{
+        font-family:'Open Sans', sans-serif;
+        font-weight: 400; 
+        margin-bottom: 2rem;
+        color: #47434b;
+    }
+
+
+    a, header li{
+        text-decoration: none;
+
+        /* Toute les balises a ont une transition du coup je l'applique dans le header */
+
+        transition: all .5s;
+    }
+
+    ul{
+        /* Supprimer les puces */
+        list-style: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+
+/*
+Style header
+*/
+
+    header{
+        background: #135063;
+        color: #BEBCBE;
+        padding: 2rem;
+        /* Bloquer les enfants dans le parent*/
+        position: relative;
+    }
+
+    nav{
+        display: none;
+    }
+    nav:hover{
+        display: inline;
+    }
+
+    header > a{
+        /* La balise A qui est enfant direct du header*/
+    background: white;
+    color: #135063;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: inline-block;
+    /* Arrondire les bords du burger Menu*/
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+    /* Placer le burger menu au centre du rond blanc*/
+    padding-top: .7rem;
+
+    /* Positionner précisement la balise */
+    position: absolute;
+
+    left: 50%;
+    top: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* Créer une bordure*/
+    border: .1rem solid #135063;
+
+    /* Augmenter la taille du burger*/
+    font-size: 1.8rem;
+    }
+
+    /* Afficher la nav au survol de la balise A du header*/
+    header > a:hover + nav{
+        display: block;
+    }
+
+
+    header li{
+        background: rgba(255, 255, 255, .5);
+        padding: .5rem;
+        margin-bottom: 1rem;
+    }
+
+    nav a{
+        color: white;
+    }
+
+    /* Changement de couleur des balises au survol de la souris */
+     header li:hover{
+         background: white;
+     }
+
+     
+     nav li:hover a{ 
+         /* si on ne selectionne que nav a:hover, le texte ne changera de couleur uniquement si on passe précisement le souris sur les balises a,car si on passe sur les balises li de fond coloré, les balises a étant en blanc, elles ne sont pas visible */
+        color: #135063;
+        font-weight: 700;
+    }
+
+    header > a:hover{
+        color: #BEBCBE;
+        background: #135063;
+        border-color: #BEBCBE;
+    }
+    
+/*
+Style main
+*/
+
+    main{
+        padding: 4rem 2rem 10rem 2rem;
+    }    
+
+
+    /*article a{
+        display: none;
+    }*/
+
+
+    /* Style Portfolio */
+        figure{
+            position: relative;
+        }
+
+        figure::after{
+            content: "";
+            width: 100%;
+            height: 3rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: white;
+        }
+
+        figcaption{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 70%;
+
+            background: white;
+            padding: 1rem;
+
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+
+            z-index: 1;
+        }
+
+        figcaption span{
+            font-weight: 400;
+            display: block;
+        }
+
+        .portfolioPage article{
+            position: relative;
+            /* Masquer les éléments qui dépassent de la balise */
+            overflow: hidden;
+            margin: 2rem auto;
+        }
+
+        .portfolioPage main a{
+            color: white;
+            background: #135063;
+            padding: .5rem 1rem;
+            position: absolute;
+            top: -15%;
+            left: 50%;
+            z-index: 1;
+
+            -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+        }
+
+        /* Changer la propiété top de la balise A au survol de l'article*/
+        .portfolioPage article:hover a{
+            top: 40%;
+        }
+
+    /*Style contact*/
+
+        /*Style formulaire*/
+        form{
+            margin: 2rem auto;
+        }
+
+
+        textarea, input:not([type="submit"]){
+            display: block;
+            width: 100%;
+
+            border: none; 
+            border-bottom: .1rem dotted #135063;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        } 
+
+        textarea{
+            min-height: 15rem;
+        }
+
+        form :last-child{
+            background: #135063;
+            color: #BEBCBE;
+            border: none;
+            padding: .5rem 1rem;
+        }
+
+        /* Style iframe */
+
+        iframe{
+            width: 100%;
+            min-height: 30rem;
+            border: none;
+        }
+
+
+/*
+Style footer
+*/
+
+    footer{
+        background: #135063;
+        color: #BEBCBE; /* Uniquement pour changer la couleur li */
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        z-index: 1000;
+    }
+
+    footer a{
+        color: #BEBCBE;
+    }
+
+    footer li:not(:last-child){
+        display: inline-block;
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+        font-size: 2rem;
+    }
+
+
+/*
+Responsive Design
+*/
+
+    /* Ecran d'un taille minimal de 400px*/
+    @media screen and (min-width:400px){
+        .portfolioPage article{
+            display: inline-block;
+            width: 49%; /* c'est ceci qui me permet de créer deux colonnes*/
+            padding: 0 1rem 0 0;
+        }
+
+        /*Sélectionner toutes les 2 balise à partir de la 2ème */
+        .portfolioPage article:nth-child(2n+2){
+            padding: 0 0 0 1rem;
+        }
+    }
+
+
+
+
+    /* Ecran d'une taille minimal de 750pc */
+
+    @media screen and (min-width:750px){
+        /*Style reset*/
+            main, h1, nav{
+                max-width: 85rem;
+                margin: auto;
+            }
+
+            h1 span{
+                display: initial;
+            }
+
+            h1{
+                font-size: 4rem;
+            }
+
+        /*Style header*/
+            header{
+                text-align: left;
+                text-indent: 1rem;
+            }
+
+            /*Masquer le burger*/
+            header>a{
+                display: none;
+            }
+
+            /* Faire réapparaitre la nav*/
+            nav{
+                display: block;
+                text-indent: 0;
+            }
+
+            /* Aligner les item de la nav */
+            nav li{
+                display: inline-block;
+            }
+     }
+
+    
+
+
+
+
+
+
+
+
+    
+        figure img{
+        height: 20rem;
+        display: inline-block;
+        margin-left: 2rem;
+        }
