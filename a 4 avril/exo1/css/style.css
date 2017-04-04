@@ -1,0 +1,34 @@
+/*
+Style Reset
+*/
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem;
+}
+
+
+article{
+    width: 10rem;
+    height: 10rem;
+    background: cadetblue;
+    position: relative;
+ 
+}
+
+button, section{
+    margin-bottom: 3rem;
+}
+
+button{
+    color: white;
+    background: #447a8c;
+    padding: .5rem 1rem;
+
+    -webkit-border-radius: 2rem;
+    border-radius: 2rem;
+    
+}
