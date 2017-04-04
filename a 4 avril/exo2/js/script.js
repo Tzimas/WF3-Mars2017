@@ -34,7 +34,7 @@ $(document).ready(function(){
     $('section').eq(5).children('button').click(function(){
         $('section').eq(5).children('article').slideToggle(1000);
     });
-
+ 
 
 
    

@@ -18,7 +18,7 @@ $(document).ready(function(){
 
         if(evt.keyCode ==27){
             $('section').fadeOut();
-        };
+        }; 
 
     });
 

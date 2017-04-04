@@ -16,7 +16,7 @@ section{
     background: rgba(0 ,0 , 0, .8);
 
     /* Pour la fade */
-    display: none;
+    display: none; 
 }
 
 article{

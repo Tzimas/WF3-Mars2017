@@ -33,7 +33,7 @@ $(document).ready(function(){
             width: 'toggle'
         });
     });
-
+ 
 
     // Fonction animate() avec durée et callBack:
     $('section:last button').click(function(){
