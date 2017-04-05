@@ -69,7 +69,7 @@ Style header
 
     header{
         background: #378083;
-        color: #BEBCBE;
+        color: #cdd7d7;
         padding: 2rem;
         /* Bloquer les enfants dans le parent*/
         position: relative;
@@ -146,9 +146,9 @@ Style header
     }
 
     header > a:hover{
-        color: #BEBCBE;
+        color: #cdd7d7;
         background: #378083;
-        border-color: #BEBCBE;
+        border-color: #cdd7d7;
     }
     
 /*
@@ -174,103 +174,117 @@ Style main
         display: none;
     }*/
 
+/*
+Style About 
+*/
+    [src="img/profil.jpg"]{
+        
+        width: 17rem;
+        margin-bottom: 2rem;
 
-    /* Style Portfolio */
-        figure{
-            position: relative;
-        }
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        
+        -webkit-box-shadow: 0 0 1rem rgb(58, 89, 90);
+        -moz-box-shadow: 0 0 1rem rgb(58, 89, 90);
+        box-shadow: 0 0 1rem rgb(58, 89, 90);     
+    }
 
-        figure::after{
-            content: "";
-            width: 100%;
-            height: 3rem;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background: white;
-        }
+    [src="img/profil.jpg"]+p{
+        margin-bottom: 2rem;
+    }
 
-        figcaption{
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 70%;
+    /*La balise ul qui est placée juste après la balise h3 */
+    h3 + ul{
+        text-align: left;
+        margin: 2rem auto;
+    }
 
-            background: white;
-            padding: 1rem;
+    /* Toutes les balises li qui suivent une balise h3*/
+    h3 + ul li{
+        background: white;
+        margin-bottom: 1rem;    
 
-            -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+        border: .1rem solid #0a6468;
 
-            z-index: 1;
-        }
+        position: relative;
+    }
 
-        figcaption span{
-            font-weight: 400;
-            display: block;
-        }
+    h3 + ul p{
+        background: #0a6468;
+        padding: 1rem;
+        min-height: 3.5rem;
 
-        .portfolioPage article{
-            position: relative;
-            /* Masquer les éléments qui dépassent de la balise */
-            overflow: hidden;
-            margin: 2rem auto;
-        }
+        /* Pour l'animation */
+        width: 0;
+    }
 
-        .portfolioPage main a{
-            color: white;
-            background: #378083;
-            padding: .5rem 1rem;
-            position: absolute;
-            top: -15%;
-            left: 50%;
-            z-index: 1;
+     h3 + ul span{
+        position: absolute;
+     }
 
-            -webkit-transform: translate(-50%);
-            transform: translate(-50%);
-        }
+    
 
-        /* Changer la propiété top de la balise A au survol de l'article*/
-        .portfolioPage article:hover a{
-            top: 40%;
-        }
+/* Style Portfolio */
+
+    figure{
+        position: relative;
+    }
+
+    figcaption{
+        position: absolute;
+        background: rgba(255, 255, 255, .9);
+        padding: 1rem 4rem;
+        top: 50%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        -webkit-border-top-left-radius: 1rem;
+        border-top-left-radius: 1rem;
+    }
+
+    figcaption button{
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        border: 0;
+        padding: 1rem;
+
+        -webkit-border-bottom-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    #modal{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        z-index: 2000;
+
+        background: rgba(10, 100, 104, 0.8);
+        color: #115255;
+
+        /*Pour l'animation */
+        display: none;
+    }
+
+    #modal article{
+        background: white;
+        width: 35rem;
+        text-align: left;
+        margin: 5rem auto;
+        padding: 2rem;
+
+    }
+    
 
     /*Style contact*/
 
-        /*Style formulaire*/
-        form{
-            margin: 2rem auto;
-        }
-
-
-        textarea, input:not([type="submit"]){
-            display: block;
-            width: 100%;
-
-            border: none; 
-            border-bottom: .1rem dotted #378083;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        } 
-
-        textarea{
-            min-height: 15rem;
-        }
-
-        form :last-child{
-            background: #378083;
-            color: #BEBCBE;
-            border: none;
-            padding: .5rem 1rem;
-        }
-
-        /* Style iframe */
-
-        iframe{
-            width: 100%;
-            min-height: 30rem;
-            border: none;
-        }
 
 
 /*
@@ -279,7 +293,7 @@ Style footer
 
     footer{
         background: #378083;
-        color: #BEBCBE; /* Uniquement pour changer la couleur li */
+        color: #cdd7d7; /* Uniquement pour changer la couleur li */
         padding: 1rem;
         position: fixed;
         bottom: 0;
@@ -290,7 +304,7 @@ Style footer
     }
 
     footer a{
-        color: #BEBCBE;
+        color: #cdd7d7;
     }
 
     footer li:not(:last-child){
@@ -372,8 +386,3 @@ Responsive Design
 
 
     
-        figure img{
-        height: 20rem;
-        display: inline-block;
-        margin-left: 2rem;
-        }

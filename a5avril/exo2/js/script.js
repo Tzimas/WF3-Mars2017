@@ -1,70 +1,87 @@
 // Attendre le chargement du DOM
 $(document).ready(function(){
+    // console.log('Dom OK');
 
-// console.log('Dom OK');
+    // Charger le contenu de home.html dans le main :
+    // $('main').load('views/home.html');
+
+    // Création d'une Fonction pour l'animations des compétences
+    function mySkills(paramEq, paramWidth){
+        
+        // Animation des balises <p> des skills :
+        $('h3 + ul').children('li').eq(paramEq).find('p').animate({
+            width: paramWidth
+        });
+    };
+
+    // Créer une fonction pour l'ouverture des modal
+    function openModal(){
+        $('button').click(function(){
+            $('#modal').fadeIn();
+        });
+        
+        // Fermer la modal
+        $('.fa-times').click(function(){
+            $('#modal').fadeOut();
+        });
+    };
 
     /*
-    Home PAGE
+    BurgerMenu :
      */
             
         // BurgerMenu :
-        $('.homePage h1 + a').click(function(evt){
+        $('h1 + a').click(function(evt){
             // Bloquer le comportement de la balise <a> :
             evt.preventDefault();
 
             // Appliquer la fonction slideToggle sur la <nav> :
-            $('.homePage nav').slideToggle();
+            $('nav').slideToggle();
         });
 
         // BurgerMenu navigation :
-        $('.homePage nav a').click(function(evt){
-            // Bloquer le comportement de la balise <a> :
-            evt.preventDefault();
-
-            var linkToOpen=$(this).attr('href');
-
-            // Fermer le BurgerMenu :
-            $('.homePage nav').slideUp(function(){
-
-                // Changre de page :
-                window.location=linkToOpen;
-                
-            });
-        });
-
-
-    /*
-    ABOUT PAGE
-     */
-        // Capter le click sur le burger BurgerMenu
-        $('.aboutPage h1 + a').click(function(evt){
+        $('nav a').click(function(evt){
             // Bloquer le comportement naturel de la balise <a> :
             evt.preventDefault();
 
-            // Sélectionner la nav pour y appliquer une fonction animate :
-            $('.aboutPage nav').animate({
-                left:'0'
-            });
-        });
+            // Masquer le <main> :
+            $('main').fadeOut();
 
-           // BurgerMenu navigation :
-        $('.aboutPage nav a').click(function(evt){
-            // Bloquer le comportement de la balise <a> :
-            evt.preventDefault();
-
-            var linkToOpen=$(this).attr('href');
+            var viewToLoad=$(this).attr('href');
 
             // Fermer le BurgerMenu :
-            $('.aboutPage nav').animate({
-                left:'-100%'
+            $('nav').slideUp(function(){
+
+                // Changer de page :
+                console.log('Vous voulez afficher la vue :' + viewToLoad);
                 
-            }, function(){
-                 // Changre de page :
-                window.location=linkToOpen;
+                // Charger la bonne vue puis afficher le <main> (callBack) :
+                $('main').load('views/'+ viewToLoad, function(){
+
+                    $('main').fadeIn(function(){
+
+                        // Vérifier si l'utilisateur veut voir la page about.html
+                        if(viewToLoad == 'about.html')
+
+                        // Appeler la fonction mySkills :
+                        mySkills(0, '84%');
+                        mySkills(1, '55%');
+                        mySkills(2, '10%');
+                    });
+
+                    // Vérifier si l'utilisateur est sur la page portfolio.html
+                    if(viewToLoad=='portfolio.html'){
+
+                        // Appeler la fonction pour ouvrir le modal
+                        openModal();
+                    } 
+                });       
             });
         });
 
 
+        // Capter le click
 
 
+    
 }); // Fin de la fonction !
