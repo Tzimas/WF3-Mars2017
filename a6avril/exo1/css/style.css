@@ -338,6 +338,8 @@ Style contact
         font-weight: 700;
         color: #115255;
         padding: 0;
+
+        -webkit-transition: all .5s;
         transition: all .5s;
     }
 
@@ -365,8 +367,18 @@ Style contact
         margin-bottom: 1.5rem;
     }
 
-    option:active{
-        background-color: red;
+
+    form b{
+        font-size: .8em;
+        text-transform: uppercase;
+        color: red;
+
+        -webkit-transition: opacity .5s;
+        transition: opacity .5s;
+    }
+
+    .hideError b{
+        opacity: 0;
     }
 
     

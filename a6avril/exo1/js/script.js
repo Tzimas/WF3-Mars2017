@@ -49,26 +49,126 @@ $(document).ready(function(){
         function contactForm(){
 
             // Capter le focus sur les inputs :
-            $('input, textarea').focus(function(){
+                $('input:not([type="submit"]), textarea').focus(function(){
 
-                console.log();
-                // Selectionner la balise précésent pour y ajouter la class openLabel :
-                $(this).prev().addClass('openLabel');
+                    // Selectionner la balise précésent pour y ajouter la class openLabel :
+                    $(this).prev().addClass('openLabel hideError');
 
-            });
+                });
 
             // Capter le blur sur les inputs et le textarea :
-            $('input, textarea').blur(function(){
+                $('input, textarea').blur(function(){
 
-                // Vérifier s'il y a pas des caractère dans le input :
-                if( $(this).val().length ==0){
-                    // Sélectionner la balise précédentes pour supprimer la class openLabel :
-                $(this).prev().removeClass();
-                }
+                    // Vérifier s'il y a pas des caractère dans le input :
+                    if( $(this).val().length ==0){
+                        // Sélectionner la balise précédentes pour supprimer la class openLabel :
+                        $(this).prev().removeClass();
+                    };   
+                });
 
-                
-            });
+            // Supprimer le message d'erreur du select :
+                $('select').focus(function(){
+                    $(this).prev().addClass('hideError');
+                });
+
+            // Supprimer le message d'erreur de la checkbox :
+                $('[type=checkbox]').focus(function(){
+                    $('form p').addClass('hideError');
+                });
+
+             // Fermer la modal
+                $('.fa-times').click(function(){
+                    $('#modal').fadeOut();
+                });
+
+
+            // Capter le soumission du formulaire :
+                $('form').submit(function(evt){
+
+                    // Bloquer le comportement naturel du formulaire:
+                    evt.preventDefault();
+
+                    // Définir les variables globales du formulaire :
+                    var userName = $('#userName');
+                    var userEmail = $('#userEmail');
+                    var userSubject = $('#userSubject');
+                    var userMessage= $('#userMessage');
+                    var checkbox = $('[type="checkbox"]');
+                    var formScore=0;
+
+                    // Vérifier que userName est au mini 2 caractères :
+                    if(userName.val().length < 2){
+                        $('[for="userName"] b').text('minimun 2 caractères'); //AUTRE Version possible : userName.prev.children('b').text('min 2 cara')
+
+                    }else{
+                        console.log('userName OK');
+                        formScore++;
+                    };
+
+                    // Vérifier que userEmail est au mini 5 caractères :
+                    if(userEmail.val().length<5){
+                        $('[for="userEmail"] b').text('minimun 5 caractères');
+
+                    }else{
+                        console.log('userEmail OK');
+                        formScore++;
+                    };
+
+                    // Vérifier que l'utilisateur est bien Selectionner un sujet :
+                    if(userSubject.val() =='null'){
+                        $('[for="userSubject"] b').text('Choisir un sujet');
+
+                    }else{
+                        console.log('userSubject OK');
+                        formScore++;
+                    };
+
+                     // Vérifier qu'il est bien un message, min 5commentaires :
+                     if(userMessage.val().length<5){
+                        $('[for="userMessage"] b').text('minimun 5 caractères');
+
+                    }else{
+                        console.log('userMessage OK');
+                        formScore++;
+                    };
+
+                    // Vérifier si la checkbox est cocher :
+                    if(checkbox[0].checked==false){
+                        $('form p b').text('Vous devez accepter les conditions générales');
+
+                    } else{
+                        console.log('cg=> OK');
+                        formScore++;
+                    };
+
+                    // Validation final du formulaire :
+                    if(formScore==5){
+                        console.log('Validé');
+                    
+
+                        // Envoi des données dans le fichier PHP
+                        // PHP répond => true; continuer le traitement du formulaire :
+
+                            // Ajouter la valeur de userName dans la balise h2 span de la modal :
+                            $('#modal span').text(userName.val());
+
+                            // Afficher la modal :
+                            $('#modal').fadeIn();
+                        
+                            // Vider les champs du formulaire :
+                            $('form')[0].reset(); 
+
+                            // Supprimer les messages d'erreur :
+                            $('form b').text('');
+
+                            // Replacer les labels :
+                            $('label').removeClass();
+
+                    };
+                });
         };
+
+
 
     /*
     BurgerMenu :
@@ -128,8 +228,6 @@ $(document).ready(function(){
                 });
             });
 
-
-        // Capter le click
 
 
     
