@@ -1,0 +1,42 @@
+<h2> Contactez-moi</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia nam soluta, esse, tempora voluptatum ipsam quaerat dicta unde distinctio consectetur similique. Tenetur dolor, delectus quasi ducimus incidunt laborum excepturi temporibus.</p>
+
+<form action="php/sendMessage.php">
+
+    <article>
+        <label for="userName">Votre nom<b></b></label>
+        <input type="text" id="userName" name="name">
+    </article>
+
+    <article>
+        <label for="userEmail">Votre Email<b></b></label>
+        <input type="email" id="userEmail" name="email">
+    </article>
+
+    <article>
+        <label for="userSubject">Choisir un sujet<b></b></label>
+        <select name="subject" id="userSubject">
+            <option value="null">- Sélectionner -</option>
+            <option value="contact"> Prise de contact </option>
+            <option value="rdv"> Prise de rendez-vous </option>
+            <option value="devis"> Demande de devis</option>
+        </select>
+    </article>
+
+    <article>
+        <label for="userMessage">Votre message<b></b></label>
+        <textarea name="message" id="userMessage"></textarea>
+
+        <p> <input type="checkbox">Accepter les CG <b></b></p>
+    </article>
+
+    <input type="submit" value="Envoyer">
+    
+</form>
+
+<section id="modal">
+    <article>
+        <h2> Merci <span></span>! <i class="fa fa-times"></i></h2>
+        <p> Nous vous recontacterons dans les plus bref délais</p>
+    </article>
+</section>

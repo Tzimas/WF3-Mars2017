@@ -1,0 +1,515 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+
+/*
+Style Reset
+*/
+
+    *{
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    h1{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    h1 span{
+        font-family:'Raleway', sans-serif;
+        display: block;
+        font-size: .5em;
+    }
+
+    
+    h2{
+        font-family:'Open Sans', sans-serif;
+        font-weight: 400; 
+        margin-bottom: 2rem;
+        color:#378083;
+    }
+
+
+    a, header li{
+        text-decoration: none;
+
+        /* Toute les balises a ont une transition du coup je l'applique dans le header */
+
+        transition: all .5s;
+    }
+
+    ul{
+        /* Supprimer les puces */
+        list-style: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+
+/*
+Style header
+*/
+
+    header{
+        background: #378083;
+        color: #cdd7d7;
+        padding: 2rem;
+        /* Bloquer les enfants dans le parent*/
+        position: relative;
+    }
+
+    nav{
+        height: 0;
+        overflow: hidden;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .openedNav{
+        height: 19rem;
+    }
+
+    .aboutPage nav{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 20rem;
+        padding: 2rem;
+        z-index: 100;
+        display: block;
+
+        background: #115255;
+    }
+  
+
+    header > a{
+        /* La balise A qui est enfant direct du header*/
+    background: white;
+    color: #378083;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: inline-block;
+    /* Arrondire les bords du burger Menu*/
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+
+    /* Placer le burger menu au centre du rond blanc*/
+    padding-top: .7rem;
+
+    /* Positionner précisement la balise */
+    position: absolute;
+
+    left: 50%;
+    top: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* Créer une bordure*/
+    border: .1rem solid #378083;
+
+    /* Augmenter la taille du burger*/
+    font-size: 1.8rem;
+    }
+
+
+    header li{
+        background: rgba(255, 255, 255, .5);
+        padding: .5rem;
+        margin-bottom: 1rem;
+    }
+
+    nav a{
+        color: white;
+    }
+
+    /* Changement de couleur des balises au survol de la souris */
+     header li:hover{
+         background: white;
+     }
+
+     
+     nav li:hover a{ 
+         /* si on ne selectionne que nav a:hover, le texte ne changera de couleur uniquement si on passe précisement le souris sur les balises a,car si on passe sur les balises li de fond coloré, les balises a étant en blanc, elles ne sont pas visible */
+        color: #378083;
+        font-weight: 700;
+    }
+
+    header > a:hover{
+        color: #cdd7d7;
+        background: #378083;
+        border-color: #cdd7d7;
+    }
+    
+/*
+Style main
+*/
+
+    main{
+        padding: 4rem 2rem 10rem 2rem;
+    }    
+
+    body .aboutPage{
+        -webkit-filter: blur(.2rem);
+        filter: blur(.2rem);
+    }
+
+     .aboutPage{
+        -webkit-filter: blur(0);
+        filter: blur(0);
+    }
+
+
+
+/*
+Style About 
+*/
+    [src="src/app/img/profil.jpg"]{
+        
+        width: 17rem;
+        margin-bottom: 2rem;
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        
+        -webkit-box-shadow: 0 0 1rem rgb(58, 89, 90);
+        -moz-box-shadow: 0 0 1rem rgb(58, 89, 90);
+        box-shadow: 0 0 1rem rgb(58, 89, 90);     
+    }
+
+    [src="img/profil.jpg"]+p{
+        margin-bottom: 2rem;
+    }
+
+    /*La balise ul qui est placée juste après la balise h3 */
+    h3 + ul{
+        text-align: left;
+        margin: 2rem auto;
+    }
+
+    /* Toutes les balises li qui suivent une balise h3*/
+    h3 + ul li{
+        background: white;
+        margin-bottom: 1rem;    
+
+        border: .1rem solid #0a6468;
+
+        position: relative;
+    }
+
+    h3 + ul p{
+        background: #0a6468;
+        padding: 1rem;
+        min-height: 3.5rem;
+
+        /* Pour l'animation */
+        width: 0;
+    }
+
+     h3 + ul span{
+        position: absolute;
+     }
+
+    
+/*
+ Style Portfolio
+*/
+
+    figure{
+        position: relative;
+    }
+
+    figcaption{
+        position: absolute;
+        background: rgba(255, 255, 255, .9);
+        padding: 1rem 4rem;
+        top: 50%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        -webkit-border-top-left-radius: 1rem;
+        border-top-left-radius: 1rem;
+    }
+
+    figcaption button{
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        border: 0;
+        padding: 1rem;
+        cursor:pointer;
+        
+
+        -webkit-border-bottom-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    #modal{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        z-index: 2000;
+
+        background: rgba(10, 100, 104, 0.8);
+        color: #115255;
+
+        /*Pour l'animation */
+        display: none;
+    }
+
+    #modal article{
+        background: white;
+        width: 35rem;
+        text-align: left;
+        margin: 5rem auto;
+        padding: 2rem;
+
+    }
+
+    #modal h2{
+        position: relative;
+    }
+
+    #modal .fa-times{
+        text-align: right;
+        position: absolute;
+        right: 0;
+        color: #115255;
+        cursor: pointer;
+    }
+    
+
+/*
+Style contact
+*/
+
+    form{
+        text-align: left;
+        margin: 2rem auto; 
+    }
+
+    select{
+        margin: 1rem auto 3rem auto;
+        color: #0a6468;
+    }
+
+    form article{
+        position:relative;
+    }
+
+    label, input, textarea{
+        display: block;
+        width: 100%;
+        border: none;
+        padding: 1rem;
+       
+    }
+
+    textarea, input:not([type="submit"]){
+        border-bottom: .1rem solid #0a6468;
+    }
+
+    input, textarea{
+        margin-bottom: 3rem;
+    }
+
+    textarea{
+        min-height: 20rem;
+        margin-bottom: 1.5rem;
+    }
+
+    label{
+        font-weight: 700;
+        color: #115255;
+        padding: 0;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    label:not([for='userSubject']){
+        position: absolute;
+        top: .5rem;
+    }
+
+    label.openLabel{
+        top:-1.5rem;
+        font-size: 1.2rem;
+        color: #378083;
+    }
+
+    [type="submit"]{
+        border: none;
+        background: #378083;
+        color: #cdd7d7;
+        font-weight: 700;
+    }
+
+    [type="checkbox"]{
+        display: inline-block;
+        width: auto;
+        margin-bottom: 1.5rem;
+    }
+
+
+    form b{
+        font-size: .8em;
+        text-transform: uppercase;
+        color: red;
+
+        -webkit-transition: opacity .5s;
+        transition: opacity .5s;
+    }
+
+    .hideError b{
+        opacity: 0;
+    }
+
+    
+
+
+
+/*
+Style footer
+*/
+
+    footer{
+        background: #378083;
+        color: #cdd7d7; /* Uniquement pour changer la couleur li */
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        z-index: 1000;
+    }
+
+    footer a{
+        color: #cdd7d7;
+    }
+
+    footer li:not(:last-child){
+        display: inline-block;
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+        font-size: 2rem;
+    }
+
+
+/*
+Responsive Design
+*/
+#appLoader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 15rem;
+    background: #378083;
+ 
+
+     -webkit-transition: all .5s;
+    transition: all .5s;
+
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+
+    display: none;
+}
+
+.closedLoader{
+    opacity: 0;
+}
+
+
+/*From  http://tobiasahlin.com/spinkit/*/
+.sk-cube-grid {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #cdd7d7;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
+}
