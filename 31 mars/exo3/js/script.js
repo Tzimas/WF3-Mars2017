@@ -1,5 +1,7 @@
 // Attendre le chargement du DOM :
 $(document).ready(function(){
+
+    console.log('Dom ok putin ');
      
     //  console.log('Dom Chargé') ==> Vérification du rattachement entre mon index et script.
 
